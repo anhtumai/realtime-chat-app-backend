@@ -5,7 +5,12 @@
   "license": "MIT",
   "scripts": {
     "local": "nodemon -e ts,js --exec ts-node -r tsconfig-paths/register src/index.ts",
-    "check": "npx tsc --noEmit"
+    "check": "tsc --noEmit",
+    "build": "rm -rf build && tsc",
+    "build:docker": "yarn run build && docker build -t chat-app-backend .",
+    "start:dev": "yarn run local",
+    "start:prod": "node build/index.js",
+    "start:docker": "docker run -p 8080:8080 chat-app-backend"
   },
   "dependencies": {
     "ajv": "^8.12.0",

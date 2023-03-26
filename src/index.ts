@@ -1,7 +1,9 @@
 import { WebSocketServer, WebSocket } from "ws";
 import { isLoginData, isMessageData } from "./validators";
 
-const wss = new WebSocketServer({ port: 8080 });
+const PORT = Number(process.env.PORT) || 8080;
+
+const wss = new WebSocketServer({ port: PORT });
 
 function parseJsonString(text: string): object {
   try {
