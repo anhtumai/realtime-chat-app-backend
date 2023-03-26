@@ -1,0 +1,21 @@
+{
+  "name": "chat-app-ws-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "local": "nodemon -e ts,js --exec ts-node -r tsconfig-paths/register src/index.ts",
+    "check": "npx tsc --noEmit"
+  },
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.4",
+    "nodemon": "^2.0.21",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.2",
+    "typescript": "^5.0.2"
+  }
+}
